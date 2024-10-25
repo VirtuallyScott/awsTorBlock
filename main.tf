@@ -52,6 +52,11 @@ resource "aws_lambda_function" "tor_blocker" {
   memory_size      = 128
   timeout          = 60
 
+  vpc_config {
+    subnet_ids         = var.subnet_ids
+    security_group_ids = [aws_security_group.tor_block_sg.id]
+  }
+
   environment {
     variables = {
       SECURITY_GROUP_ID = var.security_group_id
@@ -89,4 +94,8 @@ resource "aws_lambda_permission" "allow_cloudwatch" {
   function_name = aws_lambda_function.tor_blocker.function_name
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.schedule.arn
+}
+output "subnet_ids" {
+  description = "List of subnet IDs used by the Lambda function"
+  value       = var.subnet_ids
 }

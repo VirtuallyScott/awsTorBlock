@@ -20,6 +20,11 @@ variable "vpc_id" {
   type        = string
 }
 
+variable "subnet_ids" {
+  description = "List of subnet IDs for the Lambda function"
+  type        = list(string)
+}
+
 variable "schedule_expression" {
   description = "Cron or rate expression for Lambda schedule (e.g., 'rate(1 hour)')"
   type        = string
