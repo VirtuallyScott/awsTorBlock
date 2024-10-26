@@ -29,7 +29,9 @@ resource "aws_iam_role_policy" "lambda_policy" {
         "Action": [
           "ec2:AuthorizeSecurityGroupIngress",
           "ec2:RevokeSecurityGroupIngress",
-          "ec2:DescribeSecurityGroupRules"
+          "ec2:DescribeSecurityGroupRules",
+          "ec2:CreateNetworkInterface",
+          "ec2:DeleteNetworkInterface"
         ],
         "Resource": "*"
       },
