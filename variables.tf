@@ -1,7 +1,7 @@
 variable "region" {
   description = "AWS region for deployment"
   type        = string
-  default     = "us-east-1"
+  default     = "us-west-2"
 }
 
 variable "lambda_name" {
@@ -13,6 +13,7 @@ variable "lambda_name" {
 variable "security_group_id" {
   description = "ID of the security group to update with TOR IP blocks"
   type        = string
+  default     = "sg-015ca08c1792f0367"
 }
 
 variable "vpc_id" {
@@ -23,7 +24,6 @@ variable "vpc_id" {
 variable "subnet_ids" {
   description = "List of subnet IDs for the Lambda function"
   type        = list(string)
-  default     = ["subnet-12345678", "subnet-87654321"]  # Replace with actual subnet IDs
 }
 
 variable "schedule_expression" {
