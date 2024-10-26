@@ -23,6 +23,7 @@ variable "vpc_id" {
 variable "subnet_ids" {
   description = "List of subnet IDs for the Lambda function"
   type        = list(string)
+  default     = ["subnet-12345678", "subnet-87654321"]  # Replace with actual subnet IDs
 }
 
 variable "schedule_expression" {
