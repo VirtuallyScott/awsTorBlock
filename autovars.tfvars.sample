@@ -1,0 +1,7 @@
+# Sample variable values
+region = "us-west-2"
+lambda_name = "tor_blocker_lambda"
+security_group_id = "sg-015ca08c1792f0367"
+vpc_id = "vpc-1537c171"
+subnet_ids = ["subnet-0b2f719eb700c27fc", "subnet-0ed48f80274491d64", "subnet-009b0358157c89a8f", "subnet-0a30753b6d2c865e5"]
+schedule_expression = "rate(1 hour)"
